@@ -1,0 +1,61 @@
+#include <stdio.h>
+void push();
+void pop();
+void peek();
+int stack[20],size,choice=0,top=-1,x,i;
+
+void main()
+{
+
+
+  while(choice!=4)
+{
+     printf("stack operation:1.push 2.pop 3.peek 4.exit 5.dispay");
+     scanf("%d",&choice);
+switch(choice)
+{
+  case 1:push();break;
+  case 2:pop();break;
+  case 3:peek();break;
+  case 4:break;
+}
+}
+
+
+}
+
+void push()
+{
+   printf("enter the value to push:");
+   scanf("%d",&x);
+if(top==size-1)
+   printf("stack overflow");
+else 
+   stack[top++]=x;
+}
+
+void pop()
+{
+if (top==-1)
+   printf("the elements to be deleted is %d",stack[top]);
+     top--;
+}
+
+void peek()
+{
+    printf("the topelement in the stack in %d",stack[top]);
+}
+void display()
+{
+if(top!=-1)
+{
+    printf("the element in the stack are:");
+for(i=0;i<=top;i++)
+    printf("%d\n",stack[i]);
+}
+else
+    printf("stack in empty");
+
+
+}
+ 
